@@ -18,10 +18,26 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3' // Required for JSON processing
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    implementation 'org.json:json:20090211'
+    implementation 'com.razorpay:razorpay-java:1.4.8'
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    runtimeOnly 'com.h2database:h2'
+    compileOnly 'org.projectlombok:lombok:1.18.30' // Available only at compile-time
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    runtimeOnly 'com.mysql:mysql-connector-j'// Needed for annotation processing in Java
+}
+tasks.withType(JavaCompile) {
+    options.compilerArgs += '-Xlint:deprecation'
 }
 
 tasks.named('test') {
