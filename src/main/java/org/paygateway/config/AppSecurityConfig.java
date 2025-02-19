@@ -29,8 +29,10 @@ public class AppSecurityConfig {
                 .addFilterBefore(new JwtFilter(), BasicAuthenticationFilter.class)
                 .csrf(csrf -> csrf.disable())
                 .httpBasic(httpBasic -> {})  // Enable HTTP Basic Authentication
-                .formLogin(form -> {});  // Enable Form-based Authentication
-
+                .formLogin(form -> {})  // Enable Form-based Authentication
+                .headers(headers -> {
+                    headers.frameOptions(frame -> frame.sameOrigin());
+                });
         return http.build();
     }
     @Bean

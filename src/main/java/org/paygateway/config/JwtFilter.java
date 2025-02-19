@@ -23,7 +23,6 @@ import java.util.List;
 public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("REQEST COME doFilterInternal");
         String authHeader = request.getHeader(JwtConstant.JWT_HEADER);
         if (authHeader != null) {
             try {
