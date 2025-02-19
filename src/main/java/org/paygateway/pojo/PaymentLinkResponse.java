@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponse {
-    private String jwt;
-    private String message;
+public class PaymentLinkResponse {
+    private String payment_link_id;
+    private String payment_link_url;
 }

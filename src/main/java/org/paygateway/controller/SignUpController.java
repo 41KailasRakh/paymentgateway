@@ -1,4 +1,4 @@
-package org.paygateway;
+package org.paygateway.controller;
 
 import org.paygateway.config.JwtProvider;
 import org.paygateway.exceptions.UserException;
@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/app/auth")
-public class AuthController {
+public class SignUpController {
 
     @Autowired
     UserRepository userRepository;

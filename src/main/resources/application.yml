@@ -32,7 +32,8 @@ spring:
 
 
 razorpay:
-  key_id: rzp_test_GLAIBAfJGRg5lh
-  secret: 6R5uN9geHXNwjz768zD5lymD
+  api:
+    key: rzp_test_GLAIBAfJGRg5lh
+    secret: 6R5uN9geHXNwjz768zD5lymD
 server:
   port: 8080

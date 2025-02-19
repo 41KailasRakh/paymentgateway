@@ -5,9 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponse {
-    private String jwt;
+@NoArgsConstructor
+public class ApiResponse {
     private String message;
+    private boolean status;
 }
